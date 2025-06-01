@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Study Server</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="glass-nav">
+        <div class="logo">StudyServer</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html" class="btn btn-outline">Login</a>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <h1>Create Account</h1>
+            <p>Join StudyServer to access educational resources</p>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" required placeholder="Confirm your password">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="isAdmin">
+                    <label for="isAdmin">Register as admin (requires admin code)</label>
+                    <input type="text" id="adminCode" placeholder="Enter admin code" style="display: none;">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+            
+            <div class="auth-footer">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+            
+            <div id="registerError" class="error-message"></div>
+        </div>
+    </main>
+
+    <script src="scripts/auth.js"></script>
+</body>
+</html>
