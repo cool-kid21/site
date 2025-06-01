@@ -7,42 +7,40 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header class="glass-nav">
-        <div class="logo">StudyServer</div>
+    <header class="header">
+        <div class="logo">STUDY SERVER</div>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html" class="nav-link">Home</a>
             <a href="login.html" class="btn btn-outline">Login</a>
         </nav>
     </header>
 
     <main class="auth-container">
         <div class="auth-card">
-            <h1>Create Account</h1>
-            <p>Join StudyServer to access educational resources</p>
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">Get started with Study Server</p>
             
-            <form id="registerForm">
+            <form id="registerForm" class="auth-form">
                 <div class="form-group">
-                    <label for="regName">Full Name</label>
-                    <input type="text" id="regName" required placeholder="Enter your full name">
+                    <input type="text" id="regName" required placeholder="Full name">
                 </div>
                 <div class="form-group">
-                    <label for="regEmail">Email</label>
-                    <input type="email" id="regEmail" required placeholder="Enter your email">
+                    <input type="email" id="regEmail" required placeholder="Email address">
                 </div>
                 <div class="form-group">
-                    <label for="regPassword">Password</label>
-                    <input type="password" id="regPassword" required placeholder="Create a password">
+                    <input type="password" id="regPassword" required placeholder="Create password">
                 </div>
                 <div class="form-group">
-                    <label for="regConfirmPassword">Confirm Password</label>
-                    <input type="password" id="regConfirmPassword" required placeholder="Confirm your password">
+                    <input type="password" id="regConfirmPassword" required placeholder="Confirm password">
                 </div>
-                <div class="form-group">
+                <div class="form-group checkbox-group">
                     <input type="checkbox" id="isAdmin">
-                    <label for="isAdmin">Register as admin (requires admin code)</label>
-                    <input type="text" id="adminCode" placeholder="Enter admin code" style="display: none;">
+                    <label for="isAdmin">Register as admin</label>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                <div id="adminCodeGroup" class="form-group" style="display:none">
+                    <input type="text" id="adminCode" placeholder="Enter admin code">
+                </div>
+                <button type="submit" class="btn btn-dark btn-block">Create Account</button>
             </form>
             
             <div class="auth-footer">
