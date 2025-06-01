@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Study Server</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="glass-nav">
+        <div class="logo">StudyServer</div>
+        <nav>
+            <a href="admin.html" class="active">Dashboard</a>
+            <a href="dashboard.html">User View</a>
+            <div class="user-dropdown">
+                <button id="userMenuBtn">
+                    <span id="userInitials"></span>
+                    <span id="userName"></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <aside class="admin-sidebar">
+            <h3>Admin Tools</h3>
+            <ul>
+                <li class="active"><a href="#resources">Resources</a></li>
+                <li><a href="#users">User Management</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </aside>
+
+        <section class="admin-content">
+            <div class="admin-header">
+                <h2>Resource Management</h2>
+                <button id="addResourceBtn" class="btn btn-primary">+ Add Resource</button>
+            </div>
+            
+            <div class="resource-management">
+                <div class="add-resource-form" id="addResourceForm" style="display: none;">
+                    <h3>Add New Resource</h3>
+                    <form id="resourceForm">
+                        <div class="form-group">
+                            <label for="resourceTitle">Title</label>
+                            <input type="text" id="resourceTitle" required placeholder="Resource title">
+                        </div>
+                        <div class="form-group">
+                            <label for="resourceType">Type</label>
+                            <select id="resourceType" required>
+                                <option value="">Select type</option>
+                                <option value="doc">Google Doc</option>
+                                <option value="sheet">Google Sheet</option>
+                                <option value="slide">Google Slide</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="iframeCode">Embed Code</label>
+                            <textarea id="iframeCode" required placeholder="Paste Google iframe embed code"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="cancelResourceBtn" class="btn btn-outline">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Resource</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="resources-list">
+                    <h3>Existing Resources</h3>
+                    <table id="resourcesTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div id="userManagementSection" style="display: none;">
+                <h3>User Management</h3>
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>
