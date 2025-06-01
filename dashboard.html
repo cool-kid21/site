@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Study Server</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="glass-nav">
+        <div class="logo">StudyServer</div>
+        <nav>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="index.html">Home</a>
+            <div class="user-dropdown">
+                <button id="userMenuBtn">
+                    <span id="userInitials"></span>
+                    <span id="userName"></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Study Materials</h3>
+            <ul id="resourcesList">
+                <!-- Will be populated by JavaScript -->
+            </ul>
+        </aside>
+
+        <section class="content-area">
+            <div class="content-header">
+                <h2>Study Resources</h2>
+                <p>Access all shared study materials here</p>
+            </div>
+            
+            <div class="resource-viewer" id="resourceViewer">
+                <div class="empty-state">
+                    <img src="assets/document.svg" alt="Document icon">
+                    <h3>Select a resource to view</h3>
+                    <p>Choose from the sidebar to display the content here</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/user.js"></script>
+</body>
+</html>
